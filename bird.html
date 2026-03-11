@@ -1,29 +1,29 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sreeyuth Bird Hunt</title>
     <style>
         #game {
-    margin-top: 20px;
-}
+            margin-top: 20px;
+        }
 
-.row {
-    display: flex;
-    justify-content: center;
-}
+        .row {
+            display: flex;
+            justify-content: center;
+        }
 
-.cell {
-    margin: 5px;
-}
+        .cell {
+            margin: 5px;
+        }
 
-img {
-    width: 80px;
-    height: 80px;
-}
+        img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
     </style>
 </head>
-
 <body>
 
     <h1>Sreeyuth Bird Hunt</h1>
@@ -34,68 +34,149 @@ img {
 
     <p id="score">Score is zero.</p>
 
-    <p>Click for help.</p>
+    <p onclick="help()" style="cursor:pointer;">Click for help.</p>
 
     <p id="help">Help report</p>
 
     <div id="game">
 
-    <!-- Row 1 -->
-    <div class="row">
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
+        <div class="row">
+            <div class="cell"><img id="img0" src="images/bush.jpg" onclick="check(0)"></div>
+            <div class="cell"><img id="img1" src="images/bush.jpg" onclick="check(1)"></div>
+            <div class="cell"><img id="img2" src="images/bush.jpg" onclick="check(2)"></div>
+            <div class="cell"><img id="img3" src="images/bush.jpg" onclick="check(3)"></div>
+            <div class="cell"><img id="img4" src="images/bush.jpg" onclick="check(4)"></div>
+            <div class="cell"><img id="img5" src="images/bush.jpg" onclick="check(5)"></div>
+            <div class="cell"><img id="img6" src="images/bush.jpg" onclick="check(6)"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell"><img id="img7" src="images/bush.jpg" onclick="check(7)"></div>
+            <div class="cell"><img id="img8" src="images/bush.jpg" onclick="check(8)"></div>
+            <div class="cell"><img id="img9" src="images/bush.jpg" onclick="check(9)"></div>
+            <div class="cell"><img id="img10" src="images/bush.jpg" onclick="check(10)"></div>
+            <div class="cell"><img id="img11" src="images/bush.jpg" onclick="check(11)"></div>
+            <div class="cell"><img id="img12" src="images/bush.jpg" onclick="check(12)"></div>
+            <div class="cell"><img id="img13" src="images/bush.jpg" onclick="check(13)"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell"><img id="img14" src="images/bush.jpg" onclick="check(14)"></div>
+            <div class="cell"><img id="img15" src="images/bush.jpg" onclick="check(15)"></div>
+            <div class="cell"><img id="img16" src="images/bush.jpg" onclick="check(16)"></div>
+            <div class="cell"><img id="img17" src="images/bush.jpg" onclick="check(17)"></div>
+            <div class="cell"><img id="img18" src="images/bush.jpg" onclick="check(18)"></div>
+            <div class="cell"><img id="img19" src="images/bush.jpg" onclick="check(19)"></div>
+            <div class="cell"><img id="img20" src="images/bush.jpg" onclick="check(20)"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell"><img id="img21" src="images/bush.jpg" onclick="check(21)"></div>
+            <div class="cell"><img id="img22" src="images/bush.jpg" onclick="check(22)"></div>
+            <div class="cell"><img id="img23" src="images/bush.jpg" onclick="check(23)"></div>
+            <div class="cell"><img id="img24" src="images/bush.jpg" onclick="check(24)"></div>
+            <div class="cell"><img id="img25" src="images/bush.jpg" onclick="check(25)"></div>
+            <div class="cell"><img id="img26" src="images/bush.jpg" onclick="check(26)"></div>
+            <div class="cell"><img id="img27" src="images/bush.jpg" onclick="check(27)"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell"><img id="img28" src="images/bush.jpg" onclick="check(28)"></div>
+            <div class="cell"><img id="img29" src="images/bush.jpg" onclick="check(29)"></div>
+            <div class="cell"><img id="img30" src="images/bush.jpg" onclick="check(30)"></div>
+            <div class="cell"><img id="img31" src="images/bush.jpg" onclick="check(31)"></div>
+            <div class="cell"><img id="img32" src="images/bush.jpg" onclick="check(32)"></div>
+            <div class="cell"><img id="img33" src="images/bush.jpg" onclick="check(33)"></div>
+            <div class="cell"><img id="img34" src="images/bush.jpg" onclick="check(34)"></div>
+        </div>
+
     </div>
 
-    <!-- Row 2 -->
-    <div class="row">
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-    </div>
+    <script>
+        const ids = [
+            "img0","img1","img2","img3","img4","img5","img6",
+            "img7","img8","img9","img10","img11","img12","img13",
+            "img14","img15","img16","img17","img18","img19","img20",
+            "img21","img22","img23","img24","img25","img26","img27",
+            "img28","img29","img30","img31","img32","img33","img34"
+        ]
 
-    <!-- Row 3 -->
-    <div class="row">
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-    </div>
+        let score = 0
+        let locationsVisited = 0
+        let lastLocation = 0
+        let statueLocation = 19
+        let toucanLocation = 14
+        let lorikeetLocations = [3, 25]
+        let buntingLocations = [2, 5, 11, 20, 21]
+        let visitedLocations = []
 
-    <!-- Row 4 -->
-    <div class="row">
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-    </div>
+        function check(position) {
+            if (visitedLocations.includes(position)) {
+                return
+            }
 
-    <!-- Row 5 -->
-    <div class="row">
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-        <div class="cell"><img src="images/bush.jpg"></div>
-    </div>
+            visitedLocations.push(position)
+            locationsVisited += 1
+            lastLocation = position
 
-</div>
+            let image = document.getElementById(ids[position])
+
+            if (position === statueLocation) {
+                image.src = "images/statue.jpg"
+                score -= 3
+            } else if (position === toucanLocation) {
+                image.src = "images/toucan.jpg"
+                score += 5
+            } else if (lorikeetLocations.includes(position)) {
+                image.src = "images/lorikeet.jpg"
+                score += 3
+            } else if (buntingLocations.includes(position)) {
+                image.src = "images/bunting.jpg"
+                score += 1
+            } else {
+                image.src = "images/empty.jpg"
+            }
+
+            document.getElementById("locations").innerHTML =
+                "Number of locations checked is " + locationsVisited + "."
+
+            document.getElementById("score").innerHTML =
+                "Score is " + score + "."
+        }
+
+        function help() {
+            let report = "silence"
+
+            let row = Math.floor(lastLocation / 7)
+            let col = lastLocation % 7
+
+            for (let b of buntingLocations) {
+                let brow = Math.floor(b / 7)
+                let bcol = b % 7
+
+                if (
+                    (row === brow && Math.abs(col - bcol) === 1) ||
+                    (col === bcol && Math.abs(row - brow) === 1)
+                ) {
+                    report = "cheep"
+                }
+            }
+
+            let trow = Math.floor(toucanLocation / 7)
+            let tcol = toucanLocation % 7
+            if (Math.abs(row - trow) <= 1 && Math.abs(col - tcol) <= 1) {
+                report = "caw"
+            }
+
+            let srow = Math.floor(statueLocation / 7)
+            let scol = statueLocation % 7
+            if (Math.abs(row - srow) <= 1 && Math.abs(col - scol) <= 1) {
+                report = "thrrum"
+            }
+
+            document.getElementById("help").innerHTML = "Help report is " + report
+        }
+    </script>
 
 </body>
 </html>
