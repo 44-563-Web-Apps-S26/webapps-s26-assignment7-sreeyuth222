@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sreeyuth Reflexes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <h1>Sreeyuth Reflexes</h1>
+
+  <p id="target">Your time</p>
+  <p id="counter">Count</p>
+
+  <button onclick="beginTime()">Start Timer</button>
+  <button onclick="recordTime()">React Now</button>
+
+  <script>
+    let reactTime = undefined
+
+    function recordTime() {
+      reactTime = Date.now()
+      console.log(reactTime)
+    }
+
+    function beginTime() {
+      reactTime = undefined
+
+      for (let i = 0; i <= 4; i++) {
+        setTimeout(() => {
+          document.getElementById("counter").innerHTML = "Count: " + i
+        }, i * 1000)
+      }
+
+      setTimeout(() => {
+        if (reactTime === undefined) {
+          document.getElementById("target").innerHTML = "Time was too slow"
+        } else {
+          let endTime = Date.now()
+          let elapsed = endTime - reactTime
+          document.getElementById("target").innerHTML = "Time was " + elapsed + " ms"
+        }
+      }, 4000)
+    }
+  </script>
+
+</body>
+</html>
