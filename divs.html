@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sreeyuth Builds List with Divs</title>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      background-color: red;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+
+    .flex-container > div {
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .flex-container {
+        flex-direction: column;
+        background-color: green;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Sreeyuth Builds List with Divs</h1>
+
+  <input type="text" id="inputText" placeholder="Enter text here">
+
+  <button onclick="makeNewDiv()">Add end</button>
+  <button onclick="addFront()">Add front</button>
+  <button onclick="removeItem()">Remove</button>
+
+  <div class="flex-container" id="target">
+    <div class="divlist">row item 1</div>
+    <div class="divlist">row item 2</div>
+    <div class="divlist">row item 3</div>
+  </div>
+
+  <script>
+    function makeNewDiv() {
+      let element = document.createElement("div")
+      let value = document.getElementById("inputText").value
+      element.innerHTML = value
+      element.className = "divlist"
+
+      let container = document.getElementById("target")
+      container.appendChild(element)
+    }
+
+    function addFront() {
+      let element = document.createElement("div")
+      let value = document.getElementById("inputText").value
+      element.innerHTML = value
+      element.className = "divlist"
+
+      let container = document.getElementById("target")
+      container.insertBefore(element, container.firstChild)
+    }
+
+    function removeItem() {
+      let items = document.getElementsByClassName("divlist")
+      if (items.length > 0) {
+        items[0].remove()
+      }
+    }
+  </script>
+</body>
+</html>
