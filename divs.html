@@ -35,6 +35,7 @@
   <button onclick="makeNewDiv()">Add end</button>
   <button onclick="addFront()">Add front</button>
   <button onclick="removeItem()">Remove</button>
+  <button onclick="shuffleDivs()">Shuffle</button>
 
   <div class="flex-container" id="target">
     <div class="divlist">row item 1</div>
@@ -43,32 +44,61 @@
   </div>
 
   <script>
-    function makeNewDiv() {
-      let element = document.createElement("div")
-      let value = document.getElementById("inputText").value
-      element.innerHTML = value
-      element.className = "divlist"
+  function makeNewDiv() {
+    let element = document.createElement("div")
+    let value = document.getElementById("inputText").value
+    element.innerHTML = value
+    element.className = "divlist"
 
-      let container = document.getElementById("target")
-      container.appendChild(element)
+    let container = document.getElementById("target")
+    container.appendChild(element)
+  }
+
+  function addFront() {
+    let element = document.createElement("div")
+    let value = document.getElementById("inputText").value
+    element.innerHTML = value
+    element.className = "divlist"
+
+    let container = document.getElementById("target")
+    container.insertBefore(element, container.firstChild)
+  }
+
+  function removeItem() {
+    let items = document.getElementsByClassName("divlist")
+    if (items.length > 0) {
+      items[0].remove()
+    }
+  }
+
+  function shuffleDivs() {
+    let container = document.getElementById("target")
+    let items = Array.from(container.children)
+
+    if (items.length < 2) return
+
+    let i = Math.floor(Math.random() * items.length)
+    let j = Math.floor(Math.random() * items.length)
+
+    while (i === j) {
+      j = Math.floor(Math.random() * items.length)
     }
 
-    function addFront() {
-      let element = document.createElement("div")
-      let value = document.getElementById("inputText").value
-      element.innerHTML = value
-      element.className = "divlist"
+    let first = items[i]
+    let second = items[j]
 
-      let container = document.getElementById("target")
-      container.insertBefore(element, container.firstChild)
-    }
+    let firstNext = first.nextSibling
+    let secondNext = second.nextSibling
 
-    function removeItem() {
-      let items = document.getElementsByClassName("divlist")
-      if (items.length > 0) {
-        items[0].remove()
-      }
+    if (firstNext === second) {
+      container.insertBefore(second, first)
+    } else if (secondNext === first) {
+      container.insertBefore(first, second)
+    } else {
+      container.insertBefore(first, secondNext)
+      container.insertBefore(second, firstNext)
     }
-  </script>
+  }
+</script>
 </body>
 </html>
