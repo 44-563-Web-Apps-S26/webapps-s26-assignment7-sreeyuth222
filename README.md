@@ -4,6 +4,6 @@ An assignment on java script modifying the DOM and using anonymous callback func
 
 Hosted Pages
 
-- [Bird Hunt](https://sreeyuth222.github.io/webapps-s26-assignment7-sreeyuth222/bird.html)
-- [Reflexes](https://sreeyuth222.github.io/webapps-s26-assignment7-sreeyuth222/reflex.html)
-- [Divs](https://sreeyuth222.github.io/webapps-s26-assignment7-sreeyuth222/divs.html)
+- [Bird Hunt](https://44-563-web-apps-s26.github.io/webapps-s26-assignment7-sreeyuth222/bird.html)
+- [Reflexes](https://44-563-web-apps-s26.github.io/webapps-s26-assignment7-sreeyuth222/reflex.html)
+- [Divs](https://44-563-web-apps-s26.github.io/webapps-s26-assignment7-sreeyuth222/divs.html)
